@@ -1,229 +1,160 @@
-# Engineering Knowledge Repository (EKR)    
+📘 Engineering — Knowledge Base
+Référentiel d’ingénierie complet pour projets multi‑services, multi‑équipes et IA‑assistés
+Ce répertoire contient toute la connaissance structurée du système, depuis le business jusqu’à l’architecture, les données, les standards, les décisions et les guidelines IA.
 
-# Référentiel d’ingénierie moderne    
-Version optimisée pour BMAD + Claude Code + projets multi-services
+Il est conçu pour être :    
+lisible par les humains,    
+exploitable par les LLM (Claude Code, Cursor, Devin),    
+stable, cohérent et maintenable,    
+source de vérité unique pour l’ensemble du cycle de vie du produit.    
 
-Ce répertoire contient **toute la connaissance d’ingénierie** du système.    
-Il est structuré pour être :
-- lisible par les humains,
-- exploitable par les LLM (Claude Code, Cursor, Devin),
-- compatible avec BMAD-METHOD,
-- stable, cohérent et maintenable.
-- source de vérité unique pour l’architecture, les exigences, les API, les décisions et les patterns.    
+📁 Structure des répertoires
 
----
-
-## 📁 Structure des répertoires
-
-engineering-knowledge/    
-10-requirements/    
-20-architecture/    
-30-interfaces/    
-40-decisions/    
-50-components/    
-60-patterns/    
-70-llm-guidelines/    
-README.md    
+engineering/    
+├── 01-business/    
+├── 02-product/    
+├── 03-user-experience/    
+├── 04-domain/    
+├── 05-architecture/    
+├── 06-services/    
+├── 07-data/    
+├── 08-standards/    
+├── 09-decisions/    
+├── 10-ai/    
+└── README.md    
 
 Chaque dossier est verrouillé :    
-👉 Seul l’architecte peut créer, déplacer ou renommer un dossier.    
-👉 Les contributeurs ne créent que des fichiers dans les dossiers existants.    
+👉 Seul l’architecte peut créer, déplacer ou renommer un dossier.     
+👉 Les contributeurs ne créent que des fichiers dans les dossiers existants.     
 
----
+📂 01-business/ — Contexte métier    
+Contient les éléments fondamentaux du métier :    
+glossary/ — vocabulaire métier    
+business-rules/ — règles métier     
+use-cases/ — cas d’usage métier    
+actors/ — acteurs métier
 
-## 📂 10-requirements/ — Exigences (IEEE 29148)
-Contient les exigences du système :
+Objectif : définir le “pourquoi” du système.
 
-fonctionnelles    
-non fonctionnelles    
-contraintes    
-règles métier    
+📂 02-product/ — Vision produit    
+Contient les éléments orientés produit :    
+vision.md — vision stratégique    
+roadmap.md — roadmap    
+requirements/ — exigences produit    
+user-stories/ — stories utilisateur     
 
-### Contenu typique :
-- `REQ-xxxx-title.md`
-- `nfr-performance.md`
-- `constraints-security.md`
+Objectif : définir le “quoi” du produit.
 
-### Format recommandé :
-- ID stable (`REQ-1234`)
-- Description
-- Rationale
-- Acceptance Criteria
+📂 03-user-experience/ — UX & UI    
+Contient les éléments orientés expérience utilisateur :    
 
-### Mapping BMAD :
-- BMAD lit ces fichiers pour générer :  
-  - PRD  
-  - User Stories  
-  - Dev Stories  
-  - Architecture Requirements
+navigation.md    
+pages/
+forms/
+workflows/
+design-system/
 
-### Mapping Claude Code :
-- Claude Code utilise ces exigences pour :  
-  - générer du code conforme  
-  - produire des tests  
-  - vérifier la cohérence des API  
-  - respecter les contraintes métier
+Objectif : définir le “comment l’utilisateur interagit”.
 
----
+📂 04-domain/ — Modèle de domaine (DDD)
+Contient les éléments conceptuels :
+domain-model.md
+bounded-contexts/
+entities/
+value-objects/
+aggregates/
 
-## 📂 20-architecture/ — Architecture (ISO 42010 + C4)
-Contient les vues d’architecture du système.
+Objectif : définir le “comment le métier est modélisé”.
 
-### Contenu typique :
-- `context-view.md`
-- `container-view.md`
-- `component-view.md`
-- `deployment-view.md`
-- `principles.md`
+📂 05-architecture/ — Architecture (ISO 42010 + C4)    
+Contient les vues d’architecture :     
+context.md      
+containers.md    
+components.md    
+deployment.md    
+principles.md    
 
-### Mapping BMAD :
-- BMAD consolide ces vues pour produire :  
-  - architecture shardée  
-  - architecture-summary.md  
-  - diagrams textuels
+Objectif : définir le “comment le système est structuré”.
 
-### Mapping Claude Code :
-- Claude Code s’appuie sur ces vues pour :  
-  - structurer les services  
-  - respecter les relations entre composants  
-  - générer du code aligné sur l’architecture
+📂 06-services/ — Interfaces & intégrations
+Contient les contrats techniques :    
 
----
+openapi/ — API REST    
+asyncapi/ — événements    
+integrations/ — systèmes externes    
+    
+Objectif : définir le “comment les services communiquent”.
 
-## 📂 30-interfaces/ — API & Events (OpenAPI + AsyncAPI)
-Contient les contrats d’interface du système.
+📂 07-data/ — Données & stockage
+Contient les éléments orientés données :    
 
-### Contenu typique :
-- `case-service.openapi.yaml`
-- `account-service.openapi.yaml`
-- `events.asyncapi.yaml`
-- `api-summary.md`
+erd.md — diagramme ER    
+tables/ — tables SQL    
+migrations/ — scripts de migration    
+    
+Objectif : définir le “comment les données sont structurées”.
 
-### Mapping BMAD :
-- BMAD lit ces specs pour générer :  
-  - API documentation shardée  
-  - API summaries  
-  - Event catalogs
+📂 08-standards/ — Standards techniques    
+Contient les règles transverses :    
+frontend/    
+backend/    
+ui/    
+crud/    
+logging/    
+observability/    
+security/    
+testing/    
+    
+Objectif : définir le “comment le code doit être écrit”.
+    
+📂 09-decisions/ — ADR (Architecture Decision Records)    
+Contient les décisions d’architecture :    
+adr/ADR-0001.md    
+adr/ADR-0002.md    
+adr/index.md    
+    
+Objectif : définir le “pourquoi nous avons choisi cette solution”.
 
-### Mapping Claude Code :
-- Claude Code utilise ces specs pour :  
-  - générer les endpoints  
-  - produire les DTO  
-  - créer les clients API  
-  - générer les producers/consumers Kafka
+📂 10-ai/ — Guidelines IA    
+Contient les instructions pour les assistants IA :    
+project-context.md    
+claude.md    
+codex.md    
+cursor.md    
+prompts/
+    
+Objectif : définir le “comment les IA doivent travailler sur ce projet”.    
 
----
+🧭 Règles de gouvernance    
+1. Les dossiers sont verrouillés    
+Seul l’architecte peut :    
+créer un dossier    
+déplacer un dossier    
+renommer un dossier    
+    
+2. Les contributeurs ne créent que des fichiers    
+    
+3. Chaque fichier doit être :    
+atomique    
+court    
+structuré    
+référencé (REQ‑xxxx, ADR‑xxxx)    
 
-## 📂 40-decisions/ — ADR (Architecture Decision Records)
-Contient les décisions d’architecture.
+4. Les LLM doivent être guidés via :    
+10-ai/claude.md    
+10-ai/cursor.md    
+10-ai/prompts/    
 
-### Contenu typique :
-- `ADR-0001-use-kafka.md`
-- `ADR-0002-adopt-openapi.md`
-- `adr-index.md`
-
-### Mapping BMAD :
-- BMAD indexe les ADR pour :  
-  - produire adr-index.md  
-  - relier les décisions aux exigences et à l’architecture
-
-### Mapping Claude Code :
-- Claude Code respecte les ADR pour :  
-  - choisir les technologies  
-  - appliquer les patterns  
-  - éviter les contradictions
-
----
-
-## 📂 50-components/ — Composants standards
-Contient les briques techniques transverses.
-
-### Contenu typique :
-- `logging.md`
-- `observability.md`
-- `security.md`
-- `crud.md`
-- `ui.md`
-
-### Mapping BMAD :
-- BMAD utilise ces fichiers pour générer :  
-  - component-guidelines.md  
-  - engineering standards
-
-### Mapping Claude Code :
-- Claude Code applique ces règles pour :  
-  - structurer les services  
-  - générer du code conforme  
-  - respecter les conventions techniques
-
----
-
-## 📂 60-patterns/ — Patterns d’ingénierie
-Contient les patterns réutilisables.
-
-### Contenu typique :
-- `event-sourcing.md`
-- `domain-events.md`
-- `repository-pattern.md`
-- `api-versioning.md`
-
-### Mapping BMAD :
-- BMAD relie les patterns aux composants et aux ADR.
-
-### Mapping Claude Code :
-- Claude Code applique ces patterns dans :  
-  - la génération de code  
-  - les tests  
-  - les refactorings
-
----
-
-## 📂 70-llm-guidelines/ — Règles pour les IA
-Contient les instructions pour Claude Code, Cursor, Devin, BMAD.
-
-### Contenu typique :
-- `claude-code.md`
-- `cursor.md`
-- `project-context.md`
-- `bmad.md`
-
-### Mapping BMAD :
-- BMAD génère les skills dans `.claude/skills`.
-
-### Mapping Claude Code :
-- Claude Code utilise ces guidelines comme **system prompts internes**.
-
----
-
-# 🧭 Règles de gouvernance
-
-### 1. Les dossiers sont **verrouillés**
-Seul l’architecte peut :
-- créer un dossier  
-- déplacer un dossier  
-- renommer un dossier  
-
-### 2. Les contributeurs ne créent que des **fichiers** dans les dossiers existants
-
-### 3. Chaque fichier doit être :
-- atomique  
-- court  
-- structuré  
-- référencé (REQ‑xxxx, ADR‑xxxx)
-
-### 4. Les LLM doivent être guidés via :
-- `70-llm-guidelines/claude-code.md`  
-- `.claude/skills/` généré par BMAD
-
-### 5. BMAD lit uniquement :
-- `10-requirements/`  
-- `20-architecture/`  
-- `30-interfaces/`  
-- `40-decisions/`  
-- `50-components/`  
-- `60-patterns/`
-
-### 6. Claude Code lit :
-- tout le EKR  
-- les skills BMAD  
-- les artefacts BMAD dans `_bmad-output/`
+5. Les décisions doivent être liées à :    
+04-domain    
+05-architecture        
+06-services    
+07-data    
+6. Les liens croisés sont obligatoires    
+Exemples :    
+une exigence → un cas d’usage    
+un cas d’usage → un workflow    
+un workflow → une API    
+une API → un service    
+un service → un ADR    
+un ADR → un principe d’architecture    
