@@ -1,160 +1,268 @@
-📘 Engineering — Knowledge Base
-Référentiel d’ingénierie complet pour projets multi‑services, multi‑équipes et IA‑assistés
-Ce répertoire contient toute la connaissance structurée du système, depuis le business jusqu’à l’architecture, les données, les standards, les décisions et les guidelines IA.
+# 📘 Engineering Knowledge Repository (EKR)
 
-Il est conçu pour être :    
-lisible par les humains,    
-exploitable par les LLM (Claude Code, Cursor, Devin),    
-stable, cohérent et maintenable,    
-source de vérité unique pour l’ensemble du cycle de vie du produit.    
+## Référentiel d'ingénierie pour projets IA
 
-📁 Structure des répertoires
+L'Engineering Knowledge Repository (EKR) est la source de vérité du système.
 
-engineering/    
-├── 01-business/    
-├── 02-product/    
-├── 03-user-experience/    
-├── 04-domain/    
-├── 05-architecture/    
-├── 06-services/    
-├── 07-data/    
-├── 08-standards/    
-├── 09-decisions/    
-├── 10-ai/    
-└── README.md    
+Il contient uniquement les connaissances nécessaires au développement, à la maintenance et à l'évolution du produit :
 
-Chaque dossier est verrouillé :    
-👉 Seul l’architecte peut créer, déplacer ou renommer un dossier.     
-👉 Les contributeurs ne créent que des fichiers dans les dossiers existants.     
+- métier ;
+- produit ;
+- expérience utilisateur ;
+- domaine ;
+- architecture ;
+- interfaces ;
+- données ;
+- standards ;
+- décisions ;
+- contexte IA.
 
-📂 01-business/ — Contexte métier    
-Contient les éléments fondamentaux du métier :    
-glossary/ — vocabulaire métier    
-business-rules/ — règles métier     
-use-cases/ — cas d’usage métier    
-actors/ — acteurs métier
+Il est conçu pour être :
 
-Objectif : définir le “pourquoi” du système.
+- lisible par les humains ;
+- exploitable par les assistants IA (Claude Code, Codex, Cursor, Gemini, etc.) ;
+- versionné avec le code source ;
+- indépendant des outils ;
+- maintenable dans le temps.
 
-📂 02-product/ — Vision produit    
-Contient les éléments orientés produit :    
-vision.md — vision stratégique    
-roadmap.md — roadmap    
-requirements/ — exigences produit    
-user-stories/ — stories utilisateur     
+## Principe fondamental
 
-Objectif : définir le “quoi” du produit.
+> Une information doit exister une seule fois, au bon endroit.
 
-📂 03-user-experience/ — UX & UI    
-Contient les éléments orientés expérience utilisateur :    
+---
 
-navigation.md    
-pages/
-forms/
-workflows/
-design-system/
+# 📁 Structure
 
-Objectif : définir le “comment l’utilisateur interagit”.
+```text
+engineering/
 
-📂 04-domain/ — Modèle de domaine (DDD)
-Contient les éléments conceptuels :
-domain-model.md
-bounded-contexts/
-entities/
-value-objects/
-aggregates/
+├── 01-business/
+├── 02-product/
+├── 03-user-experience/
+├── 04-domain/
+├── 05-architecture/
+├── 06-services/
+├── 07-data/
+├── 08-standards/
+├── 09-decisions/
+├── 10-ai/
+└── README.md
+```
 
-Objectif : définir le “comment le métier est modélisé”.
+| Dossier            | Contenu      | Source de vérité                      |
+| ------------------ | ------------ | ------------------------------------- |
+| 01-business        | Métier       | Glossaire, règles métier, cas d'usage |
+| 02-product         | Produit      | Vision, exigences, user stories       |
+| 03-user-experience | UX/UI        | Pages, navigation, design system      |
+| 04-domain          | Domaine      | Modèle métier, entités, agrégats      |
+| 05-architecture    | Architecture | C4, principes, déploiement            |
+| 06-services        | Interfaces   | OpenAPI, AsyncAPI, intégrations       |
+| 07-data            | Données      | Modèle de données, migrations         |
+| 08-standards       | Standards    | Règles techniques communes            |
+| 09-decisions       | Décisions    | ADR                                   |
+| 10-ai              | IA           | Contexte et instructions IA           |
 
-📂 05-architecture/ — Architecture (ISO 42010 + C4)    
-Contient les vues d’architecture :     
-context.md      
-containers.md    
-components.md    
-deployment.md    
-principles.md    
 
-Objectif : définir le “comment le système est structuré”.
+📂 01-business    
+01-business/    
 
-📂 06-services/ — Interfaces & intégrations
-Contient les contrats techniques :    
+├── glossary/    
+├── business-rules/    
+├── use-cases/    
+└── actors/    
 
-openapi/ — API REST    
-asyncapi/ — événements    
-integrations/ — systèmes externes    
+Contient :
+
+vocabulaire métier ;    
+règles métier ;    
+cas d'utilisation ;    
+acteurs.    
+
+📂 02-product    
+02-product/    
+
+├── vision.md    
+├── roadmap.md    
+├── requirements/    
+└── user-stories/    
+
+Contient :
+
+vision produit ;    
+exigences ;    
+stories utilisateur.    
+
+📂 03-user-experience    
+03-user-experience/    
+
+├── navigation.md    
+├── pages/    
+├── forms/    
+├── workflows/    
+└── design-system/    
+
+Contient :
+
+navigation ;    
+pages applicatives ;    
+composants UI ;    
+parcours utilisateur.    
+
+📂 04-domain    
+04-domain/    
+
+├── domain-model.md    
+├── bounded-contexts/    
+├── entities/    
+├── value-objects/    
+└── aggregates/    
     
-Objectif : définir le “comment les services communiquent”.
+Modèle métier indépendant de la technologie.
 
-📂 07-data/ — Données & stockage
-Contient les éléments orientés données :    
+📂 05-architecture    
 
-erd.md — diagramme ER    
-tables/ — tables SQL    
-migrations/ — scripts de migration    
-    
-Objectif : définir le “comment les données sont structurées”.
+05-architecture/    
+├── context.md    
+├── containers.md    
+├── components.md    
+├── deployment.md    
+└── principles.md    
 
-📂 08-standards/ — Standards techniques    
-Contient les règles transverses :    
-frontend/    
-backend/    
-ui/    
-crud/    
-logging/    
-observability/    
-security/    
-testing/    
-    
-Objectif : définir le “comment le code doit être écrit”.
-    
-📂 09-decisions/ — ADR (Architecture Decision Records)    
-Contient les décisions d’architecture :    
-adr/ADR-0001.md    
-adr/ADR-0002.md    
-adr/index.md    
-    
-Objectif : définir le “pourquoi nous avons choisi cette solution”.
+Référence architecture :
 
-📂 10-ai/ — Guidelines IA    
-Contient les instructions pour les assistants IA :    
-project-context.md    
-claude.md    
-codex.md    
-cursor.md    
-prompts/
-    
-Objectif : définir le “comment les IA doivent travailler sur ce projet”.    
+ISO/IEC/IEEE 42010 ;    
+C4 Model.    
 
-🧭 Règles de gouvernance    
-1. Les dossiers sont verrouillés    
-Seul l’architecte peut :    
-créer un dossier    
-déplacer un dossier    
-renommer un dossier    
-    
-2. Les contributeurs ne créent que des fichiers    
-    
-3. Chaque fichier doit être :    
-atomique    
-court    
-structuré    
-référencé (REQ‑xxxx, ADR‑xxxx)    
+📂 06-services    
 
-4. Les LLM doivent être guidés via :    
-10-ai/claude.md    
-10-ai/cursor.md    
-10-ai/prompts/    
+06-services/    
+├── openapi/    
+├── asyncapi/    
+└── integrations/    
 
-5. Les décisions doivent être liées à :    
-04-domain    
-05-architecture        
-06-services    
-07-data    
-6. Les liens croisés sont obligatoires    
+Sources de vérité :
+
+OpenAPI : API REST ;    
+AsyncAPI : événements.    
+
+📂 07-data    
+
+07-data/    
+├── erd.md    
+├── tables/    
+└── migrations/    
+
+Contient :    
+modèle de données ;    
+structures SQL ;    
+migrations.    
+
+📂 08-standards    
+
+08-standards/    
+├── frontend/    
+├── backend/    
+├── ui/    
+├── crud/    
+├── logging/    
+├── observability/    
+├── security/    
+└── testing/    
+
+Définit les règles communes applicables aux projets.    
+
+📂 09-decisions    
+
+09-decisions/    
+└── adr/    
+    ├── ADR-0001.md    
+    ├── ADR-0002.md    
+    └── index.md    
+
+Les ADR expliquent :    
+le contexte ;    
+la décision ;    
+les conséquences.    
+
+📂 10-ai    
+
+10-ai/    
+├── project-context.md    
+├── claude.md    
+├── codex.md    
+├── cursor.md    
+└── prompts/    
+    
+Contient :    
+contexte projet pour les IA ;    
+règles d'utilisation ;    
+instructions spécifiques.    
+
+🧭 Gouvernance
+Structure    
+    
+La structure des dossiers est stable.    
+Seul l'architecte peut :    
+créer un dossier ;    
+supprimer un dossier ;    
+déplacer un dossier ;    
+renommer un dossier.    
+    
+Les contributeurs ajoutent uniquement des fichiers dans les dossiers existants.    
+
+Qualité documentaire    
+Chaque document doit être :    
+court ;    
+ciblé ;    
+structuré ;    
+versionné ;    
+référencé si nécessaire.    
+
+Exemples d'identifiants :    
+REQ-0001    
+ADR-0001    
+API-0001    
+PAGE-0001    
+STD-0001    
+Source de vérité    
+    
+Une information ne doit pas être dupliquée.    
+
 Exemples :    
-une exigence → un cas d’usage    
-un cas d’usage → un workflow    
-un workflow → une API    
-une API → un service    
-un service → un ADR    
-un ADR → un principe d’architecture    
+API → OpenAPI ;    
+événements → AsyncAPI ;    
+décisions → ADR ;    
+standards → 08-standards ;    
+architecture → 05-architecture.    
+Traçabilité minimale    
+    
+Les liens importants doivent être conservés :    
+Requirement    
+      ↓    
+Use Case    
+      ↓    
+Page    
+      ↓    
+API    
+      ↓    
+Service    
+      ↓    
+ADR    
+    
+La traçabilité doit apporter une valeur opérationnelle.    
+
+Philosophie        
+L'EKR n'est pas un wiki.        
+C'est un référentiel de connaissance exploitable par :        
+les architectes ;        
+les développeurs ;        
+les équipes QA ;        
+les assistants IA.        
+    
+Le code décrit l'implémentation.        
+Les contrats décrivent les interfaces.        
+Les standards décrivent les règles.        
+Les ADR expliquent les choix.        
+L'EKR décrit la connaissance du système.        
+Tous les outils utilisent la même source de vérité.        
+    
