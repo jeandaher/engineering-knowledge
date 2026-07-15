@@ -1,52 +1,45 @@
-# 📘 Engineering Knowledge Repository (EKR)
+# 📘 Engineering Knowledge Repository (EKR)    
+## Référentiel d’ingénierie pour projets IA
+L’Engineering Knowledge Repository (EKR) est la <strong>source de vérité du système.</strong>
 
-## Référentiel d'ingénierie pour projets IA
+Il contient uniquement les connaissances nécessaires au <strong>développement</strong>, à la <strong>maintenance</strong> et à l’évolution du produit :
+* métier    
+* produit    
+* expérience utilisateur    
+* domaine    
+* architecture    
+* interfaces    
+* données    
+* standards    
+* décisions    
+* contexte IA    
+    
+    
+Il est conçu pour être :    
+* lisible par les humains    
+* exploitable par les assistants IA (Claude Code, Codex, Cursor, Gemini, etc.)    
+* versionné avec le code source    
+* indépendant des outils    
+* maintenable dans le temps    
+* structuré pour éviter les duplications    
 
-L'Engineering Knowledge Repository (EKR) est la source de vérité du système.
+<strong>Principe fondamental</strong>    
+<i>Une information doit exister une seule fois, au bon endroit.</i>    
 
-Il contient uniquement les connaissances nécessaires au développement, à la maintenance et à l'évolution du produit :
-
-- métier ;
-- produit ;
-- expérience utilisateur ;
-- domaine ;
-- architecture ;
-- interfaces ;
-- données ;
-- standards ;
-- décisions ;
-- contexte IA.
-
-Il est conçu pour être :
-
-- lisible par les humains ;
-- exploitable par les assistants IA (Claude Code, Codex, Cursor, Gemini, etc.) ;
-- versionné avec le code source ;
-- indépendant des outils ;
-- maintenable dans le temps.
-
-## Principe fondamental
-
-> Une information doit exister une seule fois, au bon endroit.
-
----
-
-# 📁 Structure
-
+## 📁 Structure
 ```text
-engineering/
-
-├── 01-business/
-├── 02-product/
-├── 03-user-experience/
-├── 04-domain/
-├── 05-architecture/
-├── 06-services/
-├── 07-data/
-├── 08-standards/
-├── 09-decisions/
-├── 10-ai/
-└── README.md
+engineering/    
+├── 01-business/    
+├── 02-product/    
+├── 03-user-experience/    
+├── 04-domain/    
+├── 05-architecture/    
+├── 06-services/    
+├── 07-data/    
+├── 08-standards/    
+├── 09-decisions/    
+├── 10-ai/    
+└── README.md    
 ```
 
 | Dossier            | Contenu      | Source de vérité                      |
@@ -63,206 +56,251 @@ engineering/
 | 10-ai              | IA           | Contexte et instructions IA           |
 
 
-📂 01-business    
-01-business/    
+## 📂 01-business — Métier
+```Code
+01-business/
+├── glossary/
+├── business-rules/
+├── use-cases/
+└── actors/
+```
+Contient :    
+* vocabulaire métier    
+* règles métier    
+* cas d’utilisation    
+* acteurs    
 
-├── glossary/    
-├── business-rules/    
-├── use-cases/    
-└── actors/    
+<b>Source de vérité</b> :      
+Les concepts métier et leurs définitions.
+
+## 📂 02-product — Produit
+```Code
+02-product/
+├── vision.md
+├── roadmap.md
+├── requirements/
+└── user-stories/
+```
+Contient :    
+* vision produit
+* exigences
+* stories utilisateur
+
+<b>Source de vérité :</b>  
+<i>Les besoins du produit et leur priorisation.</i>
+
+## 📂 03-user-experience — UX/UI
+```Code
+03-user-experience/
+├── navigation.md
+├── pages/
+├── forms/
+├── workflows/
+└── design-system/
+```
 
 Contient :
+* navigation
+* pages applicatives
+* composants UI
+* parcours utilisateur
 
-vocabulaire métier ;    
-règles métier ;    
-cas d'utilisation ;    
-acteurs.    
+<b>Source de vérité :</b>  
+<i>L’expérience utilisateur.</i>
 
-📂 02-product    
-02-product/    
-
-├── vision.md    
-├── roadmap.md    
-├── requirements/    
-└── user-stories/    
-
-Contient :
-
-vision produit ;    
-exigences ;    
-stories utilisateur.    
-
-📂 03-user-experience    
-03-user-experience/    
-
-├── navigation.md    
-├── pages/    
-├── forms/    
-├── workflows/    
-└── design-system/    
+## 📂 04-domain — Domaine (DDD)
+```Code
+04-domain/
+├── domain-model.md
+├── bounded-contexts/
+├── entities/
+├── value-objects/
+└── aggregates/
+```
 
 Contient :
+* modèle métier
+* entités
+* objets valeur
+* agrégats
+* contextes délimités
 
-navigation ;    
-pages applicatives ;    
-composants UI ;    
-parcours utilisateur.    
+<b>Source de vérité :</b>  
+<i>Le modèle conceptuel du système.</i>
 
-📂 04-domain    
-04-domain/    
-
-├── domain-model.md    
-├── bounded-contexts/    
-├── entities/    
-├── value-objects/    
-└── aggregates/    
-    
-Modèle métier indépendant de la technologie.
-
-📂 05-architecture    
-
-05-architecture/    
-├── context.md    
-├── containers.md    
-├── components.md    
-├── deployment.md    
-└── principles.md    
+## 📂 05-architecture — Architecture
+```Code
+05-architecture/
+├── context.md
+├── containers.md
+├── components.md
+├── deployment.md
+└── principles.md
+```
 
 Référence architecture :
+* ISO/IEC/IEEE 42010
+* C4 Model
 
-ISO/IEC/IEEE 42010 ;    
-C4 Model.    
+<b>Source de vérité :</b>  
+<i>La structure du système.</i>
 
-📂 06-services    
-
-06-services/    
-├── openapi/    
-├── asyncapi/    
-└── integrations/    
-
+## 📂 06-services — Interfaces & intégrations
+```Code
+06-services/
+├── openapi/
+├── asyncapi/
+└── integrations/
+```
 Sources de vérité :
+* OpenAPI : API REST
+* AsyncAPI : événements
+* intégrations externes
 
-OpenAPI : API REST ;    
-AsyncAPI : événements.    
+## 📂 07-data — Données
+```Code
+07-data/
+├── erd.md
+├── tables/
+└── migrations/
+```
+Contient :
+* modèle de données
+* structures SQL
+* migrations
 
-📂 07-data    
+<b>Source de vérité :</b>  
+<i>La structure des données persistées.</i>
 
-07-data/    
-├── erd.md    
-├── tables/    
-└── migrations/    
+## 📂 08-standards — Standards techniques
+```Code
+08-standards/
+├── frontend/
+├── backend/
+├── ui/
+├── crud/
+├── logging/
+├── observability/
+├── security/
+└── testing/
+```
 
-Contient :    
-modèle de données ;    
-structures SQL ;    
-migrations.    
+Définit les règles communes applicables aux projets.
 
-📂 08-standards    
+<b>Source de vérité :</b>  
+<i>Les conventions techniques.</i>
 
-08-standards/    
-├── frontend/    
-├── backend/    
-├── ui/    
-├── crud/    
-├── logging/    
-├── observability/    
-├── security/    
-└── testing/    
+## 📂 09-decisions — ADR
+```Code
+09-decisions/
+└── adr/
+    ├── ADR-0001.md
+    ├── ADR-0002.md
+    └── index.md
+```
 
-Définit les règles communes applicables aux projets.    
+Les ADR expliquent :
+* le contexte
+* la décision
+* les conséquences
 
-📂 09-decisions    
+<b>Source de vérité :</b>  
+<i>Les choix structurants.</i>
 
-09-decisions/    
-└── adr/    
-    ├── ADR-0001.md    
-    ├── ADR-0002.md    
-    └── index.md    
+## 📂 10-ai — IA
+```Code
+10-ai/
+├── project-context.md
+├── claude.md
+├── codex.md
+├── cursor.md
+└── prompts/
+```
+Contient :
 
-Les ADR expliquent :    
-le contexte ;    
-la décision ;    
-les conséquences.    
+* contexte projet pour les IA
+* règles d’utilisation
+* instructions spécifiques
 
-📂 10-ai    
+<b>Source de vérité :</b>  
+<i>Le comportement attendu des assistants IA.</i>
 
-10-ai/    
-├── project-context.md    
-├── claude.md    
-├── codex.md    
-├── cursor.md    
-└── prompts/    
-    
-Contient :    
-contexte projet pour les IA ;    
-règles d'utilisation ;    
-instructions spécifiques.    
+## 🧭 Gouvernance
+<b>Structure</b>    
+La structure des dossiers est <b>stable</b>.     
+Seul l’architecte peut : 
+* créer un dossier
+* supprimer un dossier
+* déplacer un dossier
+* renommer un dossier    
 
-🧭 Gouvernance
-Structure    
-    
-La structure des dossiers est stable.    
-Seul l'architecte peut :    
-créer un dossier ;    
-supprimer un dossier ;    
-déplacer un dossier ;    
-renommer un dossier.    
-    
-Les contributeurs ajoutent uniquement des fichiers dans les dossiers existants.    
+Les contributeurs ajoutent uniquement des <b>fichiers</b> dans les dossiers existants.   
 
-Qualité documentaire    
-Chaque document doit être :    
-court ;    
-ciblé ;    
-structuré ;    
-versionné ;    
-référencé si nécessaire.    
+--- 
 
-Exemples d'identifiants :    
-REQ-0001    
-ADR-0001    
-API-0001    
-PAGE-0001    
-STD-0001    
-Source de vérité    
-    
-Une information ne doit pas être dupliquée.    
+### Qualité documentaire
+Chaque document doit être :
+* court
+* ciblé
+* structuré
+* versionné
+* référencé si nécessaire
 
-Exemples :    
-API → OpenAPI ;    
-événements → AsyncAPI ;    
-décisions → ADR ;    
-standards → 08-standards ;    
-architecture → 05-architecture.    
-Traçabilité minimale    
-    
-Les liens importants doivent être conservés :    
-Requirement    
-      ↓    
-Use Case    
-      ↓    
-Page    
-      ↓    
-API    
-      ↓    
-Service    
-      ↓    
-ADR    
-    
-La traçabilité doit apporter une valeur opérationnelle.    
+Identifiants recommandés
+```Code
+REQ-0001
+ADR-0001
+API-0001
+PAGE-0001
+STD-0001
+```
 
-Philosophie        
-L'EKR n'est pas un wiki.        
-C'est un référentiel de connaissance exploitable par :        
-les architectes ;        
-les développeurs ;        
-les équipes QA ;        
-les assistants IA.        
-    
-Le code décrit l'implémentation.        
-Les contrats décrivent les interfaces.        
-Les standards décrivent les règles.        
-Les ADR expliquent les choix.        
-L'EKR décrit la connaissance du système.        
-Tous les outils utilisent la même source de vérité.        
-    
+--- 
+
+### Source de vérité
+Une information ne doit <b>pas</b> être dupliquée.
+
+Exemples :
+* API → OpenAPI
+* événements → AsyncAPI
+* décisions → ADR
+* standards → 08-standards
+* architecture → 05-architecture
+
+---
+
+### Traçabilité minimale
+```Code
+Requirement
+      ↓
+Use Case
+      ↓
+Page
+      ↓
+API
+      ↓
+Service
+      ↓
+ADR
+```
+La traçabilité doit apporter une <b>valeur opérationnelle.</b>
+
+---
+
+### Philosophie
+L’EKR n’est pas un wiki.    
+C’est un <b>référentiel de connaissance</b> exploitable par :
+* les architectes
+* les développeurs
+* les équipes QA
+* les assistants IA
+
+Le code décrit l’implémentation.    
+Les contrats décrivent les interfaces.    
+Les standards décrivent les règles.    
+Les ADR expliquent les choix.    
+L’EKR décrit la connaissance du système.    
+
+<b>Tous les outils utilisent la même source de vérité.</b>
+
+---
